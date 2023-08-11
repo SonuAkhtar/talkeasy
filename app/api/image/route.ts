@@ -12,24 +12,27 @@ export async function POST(req: Request) {
   try {
     const { userId } = auth();
     const body = await req.json();
-    const { messages } = body;
+    const { prompt, amount = 1, resolution = "512*512" } = body;
 
     if (!userId) return new NextResponse("Not Authorized", { status: 401 });
 
     if (!configuration.apiKey)
       return new NextResponse("API Key not found", { status: 500 });
 
-    if (!messages)
-      return new NextResponse("Messages are required", { status: 400 });
+    if (!prompt) return new NextResponse("Prompt is required", { status: 400 });
+    if (!amount) return new NextResponse("Amount is required", { status: 400 });
+    if (!resolution)
+      return new NextResponse("Resolution is required", { status: 400 });
 
-    const response = await openai.createChatCompletion({
-      model: "gpt-3.5-turbo",
-      messages,
+    const response = await openai.createImage({
+      prompt,
+      n: parseInt(amount, 10),
+      size: resolution,
     });
 
-    return NextResponse.json(response.data.choices[0].message);
+    return NextResponse.json(response.data.data);
   } catch (error) {
-    console.log("Conversation_Error", error);
+    console.log("Image_Error", error);
     return new NextResponse("Internal Error", { status: 500 });
   }
 }
