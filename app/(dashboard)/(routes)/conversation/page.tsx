@@ -12,6 +12,7 @@ import { useRouter } from "next/navigation";
 import axios from "axios";
 import { useState } from "react";
 import { ChatCompletionRequestMessage } from "openai";
+import { cn } from "@/lib/utils";
 
 const ConversationPage = () => {
   const router = useRouter();
@@ -54,11 +55,11 @@ const ConversationPage = () => {
   return (
     <div>
       <Heading
-        title="Code Generator"
+        title="Conversation Generator"
         description="Most advanced conversation tool"
-        icon="fa-solid fa-code"
-        iconColor="text-green-700"
-        bgColor="bg-green-700/10"
+        icon="fa-solid fa-message"
+        iconColor="text-violet-500"
+        bgColor="text-violet-500/10"
       />
 
       <div className="px-4 lg:px-8">
@@ -94,9 +95,25 @@ const ConversationPage = () => {
           </Form>
         </div>
         <div className="space-y-4 mt-4">
+          {isLoading && (
+            <div className="p-8 rounded-lg w-full flex items-center justify-center bg-muted">
+              Loading
+            </div>
+          )}
+          {messages.length === 0 && !isLoading && <div>Empty</div>}
           <div className="flex flex-col-reverse gap-y-4">
             {messages.map((message) => (
-              <div key={message.content}>{message.content}</div>
+              <div
+                key={message.content}
+                className={cn(
+                  "p-8 w-full flex items-center gap-x-8 rounded-lg",
+                  message.role === "user"
+                    ? "bg-white border border-black/10"
+                    : "bg-muted"
+                )}
+              >
+                {message.content}
+              </div>
             ))}
           </div>
         </div>
