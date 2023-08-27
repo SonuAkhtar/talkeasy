@@ -1,0 +1,9 @@
+.profile_image {
+  top: -1rem;
+  left: -1rem;
+}
+
+.profile_image img {
+  object-fit: cover;
+  filter: grayscale(1);
+}
