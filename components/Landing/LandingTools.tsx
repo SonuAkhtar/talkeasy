@@ -1,8 +1,5 @@
 "use client";
-import { useAuth } from "@clerk/nextjs";
-import Link from "next/link";
-import TypewriteComponent from "typewriter-effect";
-import { Button } from "@/components/Shadcn/button";
+
 import {
   Card,
   CardContent,
@@ -10,50 +7,65 @@ import {
   CardTitle,
 } from "@/components/Shadcn/card";
 
-const testimonials = [
+const tools = [
   {
-    name: "sonu",
-    avatar: "S",
-    title: "Software Engineer",
-    desc: "This is the best application",
+    label: "Dashboard",
+    icon: "fa-solid fa-table-columns",
+    color: "text-sky-500",
+    bgColor: "bg-sky-500/10",
   },
   {
-    name: "sonu akhtar",
-    avatar: "S",
-    title: "Software Engineer",
-    desc: "This is the best application",
+    label: "Conversation",
+    icon: "fa-solid fa-message",
+    color: "text-violet-500",
+    bgColor: "bg-violet-500/10",
   },
   {
-    name: "riyaz",
-    avatar: "S",
-    title: "Software Engineer",
-    desc: "This is the best application",
+    label: "Image Generator",
+    icon: "fa-solid fa-image",
+    color: "text-pink-700",
+    bgColor: "bg-pink-700/10",
   },
   {
-    name: "riyaz",
-    avatar: "S",
-    title: "Software Engineer",
-    desc: "This is the best application",
+    label: "Video Generator",
+    icon: "fa-solid fa-video",
+    color: "text-orange-700",
+    bgColor: "bg-orange-700/10",
+  },
+  {
+    label: "Music Generator",
+    icon: "fa-solid fa-music",
+    color: "text-emerald-500",
+    bgColor: "bg-emerald-500/10",
+  },
+  {
+    label: "Code Generator",
+    icon: "fa-solid fa-code",
+    color: "text-green-700",
+    bgColor: "bg-green-700/10",
   },
 ];
 
 export const LandingTools = () => {
-  const { isSignedIn } = useAuth();
-
   return (
-    <div className="w-full px-10 pt-5 pb-20 flex items-center justify-center bg-[#bbadff] text-[#1e2521]">
+    <div className="w-full px-10 pt-5 pb-10 md:pb-20 flex items-center justify-center bg-gradient-to-r from-[#e8f0f4] to-[#f7fafb] text-[#1e2521]">
       <div className="w-full max-w-7xl">
         <h2 className="text-center text-4xl font-light pt-3 mb-10">Tools</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {testimonials.map((item) => (
+        <div className="grid justify-between grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          {tools.map((item, index) => (
             <Card
-              key={item.name}
-              className="bg-[#192339] border-none shadow-xl"
+              key={index}
+              className={`border-none shadow-xl ${
+                (index === 4 || index === 5) && "md:col-span-2"
+              } ${item.bgColor}`}
             >
               <CardHeader>
                 <CardTitle className="flex items-center gap-x-2">
                   <div>
-                    <p className="text-lg">{item.name}</p>
+                    <span className={item.color}>
+                      <i className={item.icon} />
+                    </span>
+                    <p className="text-lg">{item.label}</p>
                     <p className="text-zinc-400 text-sm">{item.title}</p>
                   </div>
                 </CardTitle>

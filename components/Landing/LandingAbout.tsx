@@ -37,7 +37,7 @@ const aboutDetails = [
 
 export const LandingAbout = () => {
   return (
-    <div className="w-full px-10 pt-5 pb-20 flex items-center justify-center bg-[#d7fe98] text-[#1e2521]">
+    <div className="w-full px-10 pt-5 pb-10 md:pb-20 flex items-center justify-center bg-[#bbadff] text-[#1e2521]">
       <div className="w-full max-w-7xl">
         <h2 className="text-center text-4xl font-light mb-4 lg:mb-10 ">
           About Us
@@ -45,7 +45,7 @@ export const LandingAbout = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-4">
           {aboutDetails.map((item, i) => (
             <div className="relative w-full px-2 p-2 flex items-center justify-center text-white">
-              <div className="image_wrapper relative overflow-hidden rounded-2xl h-80 w-60 border border-slate-300">
+              <div className="image_wrapper relative overflow-hidden rounded-2xl h-80 w-60">
                 <Image
                   fill
                   alt="card-image"

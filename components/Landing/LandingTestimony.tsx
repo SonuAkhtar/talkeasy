@@ -39,7 +39,7 @@ const testimonials = [
 
 export const LandingTestimony = () => {
   return (
-    <div className="w-full px-10 pt-5 pb-20 flex items-center justify-center shadow-md">
+    <div className="w-full px-10 pt-5 pb-10 md:pb-20 flex items-center justify-center shadow-md">
       <div className="w-full max-w-7xl">
         <h2 className="text-center text-4xl font-light pt-3 mb-10 text-white">
           Testimonials
