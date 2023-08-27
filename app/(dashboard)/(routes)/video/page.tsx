@@ -21,6 +21,7 @@ import { Button } from "@/components/Shadcn/button";
 // internal components
 import { formSchema } from "./constants";
 import Heading from "@/components/Heading/Heading";
+import ContentLoader from "@/components/Loader/Loader";
 
 const VideoPage = () => {
   const router = useRouter();
@@ -96,11 +97,8 @@ const VideoPage = () => {
           </Form>
         </div>
         <div className="space-y-4 mt-8">
-          {isLoading && (
-            <div className="p-8 rounded-lg w-full flex items-center justify-center bg-muted">
-              Loading
-            </div>
-          )}
+          {isLoading && <ContentLoader title={"Video loading !"} />}
+
           {!video && !isLoading && (
             <div className="w-full h-full text-center">
               No Video Generated yet!

@@ -23,6 +23,7 @@ import {
   FormField,
   FormItem,
 } from "@/components/Shadcn/form";
+import ContentLoader from "@/components/Loader/Loader";
 
 const ConversationPage = () => {
   const router = useRouter();
@@ -105,11 +106,8 @@ const ConversationPage = () => {
           </Form>
         </div>
         <div className="space-y-4 mt-8">
-          {isLoading && (
-            <div className="p-8 rounded-lg w-full flex items-center justify-center bg-muted">
-              Loading
-            </div>
-          )}
+          {isLoading && <ContentLoader title={"Conversation loading !"} />}
+
           {messages.length === 0 && !isLoading && (
             <div className="w-full h-full text-center">
               No Conversation Started yet!

@@ -23,6 +23,7 @@ import { Button } from "@/components/Shadcn/button";
 // internal components
 import { formSchema } from "./constants";
 import Heading from "@/components/Heading/Heading";
+import ContentLoader from "@/components/Loader/Loader";
 
 const CodePage = () => {
   const router = useRouter();
@@ -105,11 +106,8 @@ const CodePage = () => {
           </Form>
         </div>
         <div className="space-y-4 mt-8">
-          {isLoading && (
-            <div className="p-8 rounded-lg w-full flex items-center justify-center bg-muted">
-              Loading
-            </div>
-          )}
+          {isLoading && <ContentLoader title={"Code loading !"} />}
+
           {messages.length === 0 && !isLoading && (
             <div className="w-full h-full text-center">
               No Code Generated yet!
