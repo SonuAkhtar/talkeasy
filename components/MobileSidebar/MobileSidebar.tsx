@@ -1,8 +1,13 @@
 "use client";
+
+// imports
 import { useEffect, useState } from "react";
 
+// external libraries/components
 import { Button } from "@/components/Shadcn/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/Shadcn/sheet";
+
+// internal components
 import Sidebar from "@/components/Sidebar/Sidebar";
 
 const MobileSidebar = () => {

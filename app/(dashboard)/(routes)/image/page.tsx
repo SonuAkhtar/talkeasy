@@ -1,26 +1,36 @@
 "use client";
 
-import { useState } from "react";
+// imports
+
 import axios from "axios";
 import Image from "next/image";
-
-import * as z from "zod";
-import Heading from "@/components/Heading/Heading";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { amountOptions, formSchema, resolutionOptions } from "./constants";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/Shadcn/button";
 import { useRouter } from "next/navigation";
+import * as z from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+// external libraries/components
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+} from "@/components/Shadcn/form";
+import { Input } from "@/components/Shadcn/input";
+import { Button } from "@/components/Shadcn/button";
 import {
   SelectTrigger,
   Select,
   SelectValue,
   SelectContent,
   SelectItem,
-} from "@/components/ui/select";
+} from "@/components/Shadcn/select";
 import { Card, CardFooter } from "@/components/Shadcn/card";
+
+// internal components
+import { amountOptions, formSchema, resolutionOptions } from "./constants";
+import Heading from "@/components/Heading/Heading";
 
 const ImagePage = () => {
   const router = useRouter();
@@ -155,6 +165,12 @@ const ImagePage = () => {
             </form>
           </Form>
         </div>
+
+        {images.length === 0 && !isLoading && (
+          <div className="w-full h-full text-center mt-8">
+            No Image Generated yet!
+          </div>
+        )}
         <div className="space-y-4 mt-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-8">
             {images.map((image) => (

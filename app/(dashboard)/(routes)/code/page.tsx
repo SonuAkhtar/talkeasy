@@ -1,19 +1,28 @@
 "use client";
 
-import * as z from "zod";
-import Heading from "@/components/Heading/Heading";
-import { useForm } from "react-hook-form";
-import { formSchema } from "./constants";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/Shadcn/button";
-import { useRouter } from "next/navigation";
+// imports
 import axios from "axios";
+import * as z from "zod";
 import { useState } from "react";
 import { ChatCompletionRequestMessage } from "openai";
-import { cn } from "@/lib/utils";
+import { useRouter } from "next/navigation";
+import { useForm } from "react-hook-form";
 import ReactMarkdown from "react-markdown";
+
+// external libraries/components
+import { zodResolver } from "@hookform/resolvers/zod";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+} from "@/components/Shadcn/form";
+import { Input } from "@/components/Shadcn/input";
+import { Button } from "@/components/Shadcn/button";
+
+// internal components
+import { formSchema } from "./constants";
+import Heading from "@/components/Heading/Heading";
 
 const CodePage = () => {
   const router = useRouter();
@@ -95,23 +104,27 @@ const CodePage = () => {
             </form>
           </Form>
         </div>
-        <div className="space-y-4 mt-4">
+        <div className="space-y-4 mt-8">
           {isLoading && (
             <div className="p-8 rounded-lg w-full flex items-center justify-center bg-muted">
               Loading
             </div>
           )}
-          {messages.length === 0 && !isLoading && <div>Empty</div>}
+          {messages.length === 0 && !isLoading && (
+            <div className="w-full h-full text-center">
+              No Code Generated yet!
+            </div>
+          )}
           <div className="flex flex-col-reverse gap-y-4">
             {messages.map((message) => (
               <div
                 key={message.content}
-                className={cn(
-                  "p-8 w-full flex items-center gap-x-8 rounded-lg",
+                className={`p-8 w-full flex items-center gap-x-8 rounded-lg ${
                   message.role === "user"
                     ? "bg-white border border-black/10"
                     : "bg-muted"
-                )}
+                }
+                `}
               >
                 <ReactMarkdown
                   components={{

@@ -1,18 +1,26 @@
 "use client";
 
+// imports
 import * as z from "zod";
-import Heading from "@/components/Heading/Heading";
-import { useForm } from "react-hook-form";
-import { formSchema } from "./constants";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/Shadcn/button";
-import { useRouter } from "next/navigation";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { ChatCompletionRequestMessage } from "openai";
-import { cn } from "@/lib/utils";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+// external libraries/components
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+} from "@/components/Shadcn/form";
+import { Input } from "@/components/Shadcn/input";
+import { Button } from "@/components/Shadcn/button";
+
+// internal components
+import { formSchema } from "./constants";
+import Heading from "@/components/Heading/Heading";
 
 const MusicPage = () => {
   const router = useRouter();
@@ -87,13 +95,17 @@ const MusicPage = () => {
             </form>
           </Form>
         </div>
-        <div className="space-y-4 mt-4">
+        <div className="space-y-4 mt-8">
           {isLoading && (
             <div className="p-8 rounded-lg w-full flex items-center justify-center bg-muted">
               Loading
             </div>
           )}
-          {!music && !isLoading && <div>Empty</div>}
+          {!music && !isLoading && (
+            <div className="w-full h-full text-center">
+              No Music Generated yet!
+            </div>
+          )}
           {music && (
             <audio controls className="w-full mt-8">
               <source src={music} />

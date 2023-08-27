@@ -1,53 +1,9 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-
-const routes = [
-  {
-    label: "Dashboard",
-    icon: "fa-solid fa-table-columns",
-    href: "/dashboard",
-    color: "text-sky-500",
-  },
-  {
-    label: "Conversation",
-    icon: "fa-solid fa-message",
-    href: "/conversation",
-    color: "text-violet-500",
-  },
-  {
-    label: "Image Generator",
-    icon: "fa-solid fa-image",
-    href: "/image",
-    color: "text-pink-700",
-  },
-  {
-    label: "Video Generator",
-    icon: "fa-solid fa-video",
-    href: "/video",
-    color: "text-orange-700",
-  },
-  {
-    label: "Music Generator",
-    icon: "fa-solid fa-music",
-    href: "/music",
-    color: "text-emerald-500",
-  },
-  {
-    label: "Code Generator",
-    icon: "fa-solid fa-code",
-    href: "/code",
-    color: "text-green-700",
-  },
-  {
-    label: "Settings",
-    icon: "fa-solid fa-gear",
-    href: "/settings",
-  },
-];
+import { sidebarData } from "@/app/api/data";
 
 const Sidebar = () => {
   const pathname = usePathname();
@@ -62,20 +18,21 @@ const Sidebar = () => {
         </Link>
 
         <div className="space-y-1">
-          {routes.map((route) => (
+          {sidebarData.map((data, index) => (
             <Link
-              href={route.href}
-              key={route.href}
-              className={cn(
-                "text-sm group flex p-3 w-full justify-start font-medium cursor-pointer hover:text-white hover:bg-white/10 rounded-lg transition",
-                pathname === route.href
-                  ? "text-white bg-white/10"
-                  : "text-zinc-400"
-              )}
+              href={data.href}
+              key={index}
+              className={`text-sm group flex p-3 w-full justify-start font-medium cursor-pointer hover:text-white hover:bg-white/10 rounded-lg transition
+                ${
+                  pathname === data.href
+                    ? "text-white bg-white/10"
+                    : "text-zinc-400"
+                }
+              `}
             >
               <div className="flex items-center flex-1">
-                <i className={cn("mr-3", route.icon, route.color)} />
-                {route.label}
+                <i className={`mr-3 ${data.icon} ${data.color}`} />
+                {data.label}
               </div>
             </Link>
           ))}
