@@ -1,0 +1,68 @@
+.image_wrapper img {
+  object-fit: cover;
+}
+
+.card_body .number {
+  top: -5rem;
+}
+
+.card_body .name {
+  left: -10rem;
+  top: 8rem;
+}
+
+.card_body .profile {
+  left: -10rem;
+  top: 10rem;
+}
+
+.card_body .know_btn {
+  bottom: -5rem;
+}
+
+/* Hover effects */
+.image_wrapper:hover img {
+  scale: 1.75;
+  filter: grayscale(1);
+}
+
+.image_wrapper:hover .card_body {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.image_wrapper:hover .card_body .number {
+  top: 1rem;
+}
+
+.image_wrapper:hover .card_body .name,
+.image_wrapper:hover .card_body .profile {
+  left: 1rem;
+}
+
+.image_wrapper:hover .card_body .know_btn {
+  bottom: 1rem;
+}
+
+/* Responsive screens */
+@media only screen and (max-width: 600px) {
+  .image_wrapper img {
+    scale: 1.75;
+  }
+
+  .card_body {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  .card_body .number {
+    top: 1rem;
+  }
+
+  .card_body .name,
+  .card_body .profile {
+    left: 1rem;
+  }
+
+  .card_body .know_btn {
+    bottom: 1rem;
+  }
+}
