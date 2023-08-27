@@ -3,11 +3,11 @@
 import Link from "next/link";
 import { useAuth } from "@clerk/nextjs";
 
-import { Montserrat } from "next/font/google";
+import { Yatra_One } from "next/font/google";
 import { Button } from "@/components/Shadcn/button";
 
-const font = Montserrat({
-  weight: "600",
+const font = Yatra_One({
+  weight: "400",
   subsets: ["latin"],
 });
 
@@ -19,7 +19,8 @@ export const LandingNavbar = () => {
       <div className="w-full max-w-7xl flex items-center justify-between">
         <Link href="/" className="flex items-center">
           <h1 className={`text-2xl font-bold text-white ${font.className}`}>
-            TalkEasy
+            <span className="text-4xl text-purple-400">T</span>alk
+            <span className="text-4xl text-pink-600">E</span>asy
           </h1>
         </Link>
         <div className="flex items-center gap-x-4">
