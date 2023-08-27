@@ -1,0 +1,14 @@
+.sidebar_wrapper {
+  background-image: linear-gradient(
+    to right top,
+    #17413b,
+    #154638,
+    #1a4b33,
+    #254f2b,
+    #325321
+  );
+}
+
+.sidebar_item .sidebar_icon {
+  font-size: 1.25rem;
+}

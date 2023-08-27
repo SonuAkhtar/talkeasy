@@ -10,18 +10,19 @@ import { ChatCompletionRequestMessage } from "openai";
 
 // external libraries/components
 import { zodResolver } from "@hookform/resolvers/zod";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-} from "@/components/Shadcn/form";
+
 import { Input } from "@/components/Shadcn/input";
 import { Button } from "@/components/Shadcn/button";
 
 // internal components
 import { formSchema } from "./constants";
 import Heading from "@/components/Heading/Heading";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+} from "@/components/Shadcn/form";
 
 const ConversationPage = () => {
   const router = useRouter();
@@ -84,9 +85,9 @@ const ConversationPage = () => {
                   <FormItem className="col-span-12 lg:col-span-10">
                     <FormControl className="m-0 p-0">
                       <Input
-                        className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
+                        className="bg-transparent border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
                         disabled={isLoading}
-                        placeholder="How do I calculate the radius of sun?"
+                        placeholder="write an essay on global warming"
                         {...field}
                       />
                     </FormControl>

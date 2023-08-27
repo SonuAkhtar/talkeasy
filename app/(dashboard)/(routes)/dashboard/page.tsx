@@ -8,6 +8,7 @@ import { Card } from "@/components/Shadcn/card";
 
 // internal components
 import { dashboardData } from "@/app/api/data";
+import "./page.css";
 
 const DashboardPage = () => {
   const router = useRouter();
@@ -28,11 +29,11 @@ const DashboardPage = () => {
           <Card
             onClick={() => router.push(data.href)}
             key={data.href}
-            className="p-4 border-black/5 flex items-center justify-between hover:shadow-md transition cursor-pointer"
+            className={`dash_card p-4 border-black/5 flex items-center justify-between hover:shadow-md transition cursor-pointer ${data.bgColor}`}
           >
             <div className="flex items-center gap-x-4">
-              <div className={`p-2 w-fit rounded-md ${data.bgColor}`}>
-                <i className={`w-5 h-5 ${data.icon} ${data.color}`} />
+              <div className={"p-2 w-fit rounded-md"}>
+                <i className={`dashboard_icon ${data.icon} ${data.color}`} />
               </div>
               <div className="font-semibold">{data.label}</div>
             </div>

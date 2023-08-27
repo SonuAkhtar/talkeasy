@@ -73,11 +73,6 @@ export const sidebarData = [
     href: "/code",
     color: "text-green-700",
   },
-  {
-    label: "Settings",
-    icon: "fa-solid fa-gear",
-    href: "/settings",
-  },
 ];
 
 export const landingToolsData = [
