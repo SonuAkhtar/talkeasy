@@ -1,6 +1,7 @@
 "use client";
-import { useAuth } from "@clerk/nextjs";
+
 import Link from "next/link";
+import { useAuth } from "@clerk/nextjs";
 import { Button } from "@/components/Shadcn/button";
 
 export const LandingFooter = () => {

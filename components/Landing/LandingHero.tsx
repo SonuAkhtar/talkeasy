@@ -1,12 +1,8 @@
 "use client";
-import { useAuth } from "@clerk/nextjs";
-import Link from "next/link";
+
 import TypewriteComponent from "typewriter-effect";
-import { Button } from "@/components/Shadcn/button";
 
 export const LandingHero = () => {
-  const { isSignedIn } = useAuth();
-
   return (
     <div className="w-full text-white font-bold py-36 text-center flex items-center justify-center">
       <div className="w-full max-w-7xl flex items-center justify-center flex-col gap-4">
