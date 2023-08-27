@@ -13,8 +13,11 @@ export const LandingAbout = () => {
           About Us
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-4">
-          {landingAboutData.map((item, i) => (
-            <div className="relative w-full px-2 p-2 flex items-center justify-center text-white">
+          {landingAboutData.map((item, index) => (
+            <div
+              key={index}
+              className="relative w-full px-2 p-2 flex items-center justify-center text-white"
+            >
               <div className="image_wrapper relative overflow-hidden rounded-2xl h-80 w-60">
                 <Image
                   fill
