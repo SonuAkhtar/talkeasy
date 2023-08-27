@@ -117,11 +117,11 @@ const ConversationPage = () => {
             {messages.map((message) => (
               <div
                 key={message.content}
-                className={`p-8 w-full flex items-center gap-x-8 rounded-lg
+                className={`p-4 w-full flex items-center gap-x-8 rounded-lg
                   ${
                     message.role === "user"
                       ? "bg-white border border-black/10"
-                      : "bg-muted"
+                      : "bg-violet-500/5 border shadow-md"
                   }
                 `}
               >

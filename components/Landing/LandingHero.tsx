@@ -1,11 +1,19 @@
 "use client";
 
 import TypewriteComponent from "typewriter-effect";
+import { Yatra_One } from "next/font/google";
+
+const font = Yatra_One({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export const LandingHero = () => {
   return (
     <div className="w-full text-white font-bold py-36 text-center flex items-center justify-center">
-      <div className="w-full max-w-7xl flex items-center justify-center flex-col gap-4">
+      <div
+        className={`w-full max-w-7xl flex items-center justify-center flex-col gap-4 ${font.className}`}
+      >
         <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl space-y-5 font-extrabold">
           <h1>The AI tool for</h1>
         </div>
