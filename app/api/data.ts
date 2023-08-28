@@ -1,10 +1,10 @@
 export const dashboardData = [
   {
-    label: "Conversation",
+    label: "Information Generator",
     icon: "fa-solid fa-table-columns",
     color: "text-violet-500",
     bgColor: "bg-violet-500/10",
-    href: "/conversation",
+    href: "/information",
   },
   {
     label: "Image Generator",
@@ -44,31 +44,31 @@ export const sidebarData = [
     color: "text-sky-500",
   },
   {
-    label: "Conversation",
+    label: "Information",
     icon: "fa-solid fa-message",
     href: "/conversation",
     color: "text-violet-500",
   },
   {
-    label: "Image Generator",
+    label: "Image",
     icon: "fa-solid fa-image",
     href: "/image",
     color: "text-pink-700",
   },
   {
-    label: "Video Generator",
+    label: "Video",
     icon: "fa-solid fa-video",
     href: "/video",
     color: "text-orange-700",
   },
   {
-    label: "Music Generator",
+    label: "Music",
     icon: "fa-solid fa-music",
     href: "/music",
     color: "text-emerald-500",
   },
   {
-    label: "Code Generator",
+    label: "Code",
     icon: "fa-solid fa-code",
     href: "/code",
     color: "text-green-700",

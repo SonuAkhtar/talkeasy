@@ -19,11 +19,11 @@ export const LandingNavbar = () => {
       <div className="w-full max-w-7xl flex items-center justify-between">
         <Link href="/" className="flex items-center">
           <h1 className={`text-2xl font-bold text-white ${font.className}`}>
-            <span className="text-4xl text-purple-400">T</span>alk
-            <span className="text-4xl text-pink-600">E</span>asy
+            <span className="text-4xl">T</span>alk
+            <span className="text-4xl">E</span>asy
           </h1>
         </Link>
-        <div className="flex items-center gap-x-4">
+        <div className="flex items-center gap-x-2 md:gap-x-4">
           <Link href="/login">
             <Button
               variant="outline"

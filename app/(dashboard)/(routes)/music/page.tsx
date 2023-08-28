@@ -22,6 +22,7 @@ import { Button } from "@/components/Shadcn/button";
 import { formSchema } from "./constants";
 import Heading from "@/components/Heading/Heading";
 import ContentLoader from "@/components/Loader/Loader";
+import Empty from "@/components/Empty/Empty";
 
 const MusicPage = () => {
   const router = useRouter();
@@ -57,8 +58,8 @@ const MusicPage = () => {
   return (
     <div>
       <Heading
-        title="Music Generator"
-        description="Turn your prompt into music"
+        title="Music"
+        description="Let's convert your tune to music with AI"
         icon="fa-solid fa-music"
         iconColor="text-emerald-500"
         bgColor="bg-emerald-700/10"
@@ -100,9 +101,7 @@ const MusicPage = () => {
           {isLoading && <ContentLoader title={"Music loading !"} />}
 
           {!music && !isLoading && (
-            <div className="w-full h-full text-center">
-              No Music Generated yet!
-            </div>
+            <Empty icon="/music.jpg" title="No Music generated yet!" />
           )}
           {music && (
             <audio controls className="w-full mt-8">

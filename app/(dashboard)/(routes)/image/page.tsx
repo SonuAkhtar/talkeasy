@@ -31,6 +31,7 @@ import { Card, CardFooter } from "@/components/Shadcn/card";
 // internal components
 import { amountOptions, formSchema, resolutionOptions } from "./constants";
 import Heading from "@/components/Heading/Heading";
+import Empty from "@/components/Empty/Empty";
 
 const ImagePage = () => {
   const router = useRouter();
@@ -67,7 +68,7 @@ const ImagePage = () => {
   return (
     <div>
       <Heading
-        title="Image Generator"
+        title="Image"
         description="Turn your imagination into images"
         icon="fa-solid fa-image"
         iconColor="text-pink-500"
@@ -167,9 +168,7 @@ const ImagePage = () => {
         </div>
 
         {images.length === 0 && !isLoading && (
-          <div className="w-full h-full text-center mt-8">
-            No Image Generated yet!
-          </div>
+          <Empty icon="/image.jpg" title="No Image generated yet!" />
         )}
         <div className="space-y-4 mt-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-8">

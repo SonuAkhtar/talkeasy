@@ -24,6 +24,7 @@ import {
   FormItem,
 } from "@/components/Shadcn/form";
 import ContentLoader from "@/components/Loader/Loader";
+import Empty from "@/components/Empty/Empty";
 
 const ConversationPage = () => {
   const router = useRouter();
@@ -66,8 +67,8 @@ const ConversationPage = () => {
   return (
     <div>
       <Heading
-        title="Conversation Generator"
-        description="Most advanced conversation tool"
+        title="Information"
+        description="Power of Advanced AI in your hands."
         icon="fa-solid fa-message"
         iconColor="text-violet-500"
         bgColor="bg-violet-500/10"
@@ -109,10 +110,9 @@ const ConversationPage = () => {
           {isLoading && <ContentLoader title={"Conversation loading !"} />}
 
           {messages.length === 0 && !isLoading && (
-            <div className="w-full h-full text-center">
-              No Conversation Started yet!
-            </div>
+            <Empty icon="/info.jpg" title="No Information generated yet!" />
           )}
+
           <div className="flex flex-col-reverse gap-y-4">
             {messages.map((message) => (
               <div

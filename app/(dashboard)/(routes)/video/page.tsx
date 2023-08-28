@@ -22,6 +22,7 @@ import { Button } from "@/components/Shadcn/button";
 import { formSchema } from "./constants";
 import Heading from "@/components/Heading/Heading";
 import ContentLoader from "@/components/Loader/Loader";
+import Empty from "@/components/Empty/Empty";
 
 const VideoPage = () => {
   const router = useRouter();
@@ -57,8 +58,8 @@ const VideoPage = () => {
   return (
     <div>
       <Heading
-        title="Video Generator"
-        description="Turn your prompt into video"
+        title="Video"
+        description="Provide any prompt and see magic!"
         icon="fa-solid fa-video"
         iconColor="text-orange-700"
         bgColor="bg-orange-700/10"
@@ -100,9 +101,7 @@ const VideoPage = () => {
           {isLoading && <ContentLoader title={"Video loading !"} />}
 
           {!video && !isLoading && (
-            <div className="w-full h-full text-center">
-              No Video Generated yet!
-            </div>
+            <Empty icon="/no_video.jpg" title="No Video generated yet!" />
           )}
           {video && (
             <video

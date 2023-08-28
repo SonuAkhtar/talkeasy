@@ -16,9 +16,9 @@ const Heading = ({
   return (
     <div className="px-4 lg:px-8 flex items-center gap-x-3 mb-8">
       <div
-        className={`p-2 w-fit h-8 w-8 flex items-center justify-center rounded-full ${bgColor} `}
+        className={`p-4 w-fit flex items-center justify-center rounded-full ${bgColor} `}
       >
-        <i className={`${icon} ${iconColor} `} />
+        <i className={`text-2xl ${icon} ${iconColor} `} />
       </div>
       <div>
         <h2 className={`text-3xl font-bold ${iconColor}`}>{title}</h2>

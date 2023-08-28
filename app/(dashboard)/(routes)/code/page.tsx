@@ -24,6 +24,7 @@ import { Button } from "@/components/Shadcn/button";
 import { formSchema } from "./constants";
 import Heading from "@/components/Heading/Heading";
 import ContentLoader from "@/components/Loader/Loader";
+import Empty from "@/components/Empty/Empty";
 
 const CodePage = () => {
   const router = useRouter();
@@ -66,7 +67,7 @@ const CodePage = () => {
   return (
     <div>
       <Heading
-        title="Code Generator"
+        title="Code"
         description="Generate code using generative text"
         icon="fa-solid fa-code"
         iconColor="text-green-700"
@@ -109,9 +110,7 @@ const CodePage = () => {
           {isLoading && <ContentLoader title={"Code loading !"} />}
 
           {messages.length === 0 && !isLoading && (
-            <div className="w-full h-full text-center">
-              No Code Generated yet!
-            </div>
+            <Empty icon="/code.jpg" title="No Code generated yet!" />
           )}
           <div className="flex flex-col-reverse gap-y-4">
             {messages.map((message) => (
