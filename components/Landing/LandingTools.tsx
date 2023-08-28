@@ -4,7 +4,7 @@ import { Card, CardHeader, CardTitle } from "@/components/Shadcn/card";
 import { landingToolsData } from "@/app/api/data";
 import Link from "next/link";
 
-export const LandingTools = () => {
+const LandingTools = () => {
   return (
     <div className="w-full px-10 pt-5 pb-10 md:pb-20 flex items-center justify-center bg-gradient-to-r from-[#e8f0f4] to-[#f7fafb] text-[#1e2521]">
       <div className="w-full max-w-7xl">
@@ -37,3 +37,5 @@ export const LandingTools = () => {
     </div>
   );
 };
+
+export default LandingTools;

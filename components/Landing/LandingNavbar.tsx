@@ -11,7 +11,7 @@ const font = Yatra_One({
   subsets: ["latin"],
 });
 
-export const LandingNavbar = () => {
+const LandingNavbar = () => {
   const { isSignedIn } = useAuth();
 
   return (
@@ -42,3 +42,5 @@ export const LandingNavbar = () => {
     </nav>
   );
 };
+
+export default LandingNavbar;

@@ -8,7 +8,7 @@ const font = Yatra_One({
   subsets: ["latin"],
 });
 
-export const LandingHero = () => {
+const LandingHero = () => {
   return (
     <div className="w-full text-white font-bold py-36 text-center flex items-center justify-center">
       <div
@@ -22,7 +22,7 @@ export const LandingHero = () => {
         <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
           <TypewriteComponent
             options={{
-              strings: ["Conversation", "Code", "Images", "Music", "Videos"],
+              strings: ["Information", "Code", "Images", "Music", "Videos"],
               autoStart: true,
               loop: true,
             }}
@@ -39,3 +39,5 @@ export const LandingHero = () => {
     </div>
   );
 };
+
+export default LandingHero;

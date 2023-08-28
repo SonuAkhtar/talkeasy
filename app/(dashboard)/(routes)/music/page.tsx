@@ -21,7 +21,7 @@ import { Button } from "@/components/Shadcn/button";
 // internal components
 import { formSchema } from "./constants";
 import Heading from "@/components/Heading/Heading";
-import ContentLoader from "@/components/Loader/Loader";
+import ContentLoader from "@/components/ContentLoader/ContentLoader";
 import Empty from "@/components/Empty/Empty";
 
 const MusicPage = () => {

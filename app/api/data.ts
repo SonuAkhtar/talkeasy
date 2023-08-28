@@ -24,14 +24,14 @@ export const dashboardData = [
     label: "Music Generator",
     icon: "fa-solid fa-music",
     color: "text-emerald-500",
-    bgColor: "bg-emerald-700/10",
+    bgColor: "bg-emerald-500/10",
     href: "/music",
   },
   {
     label: "Code Generator",
     icon: "fa-solid fa-code",
-    color: "text-green-700",
-    bgColor: "bg-green-700/10",
+    color: "text-sky-500",
+    bgColor: "bg-sky-500/10",
     href: "/code",
   },
 ];
@@ -46,7 +46,7 @@ export const sidebarData = [
   {
     label: "Information",
     icon: "fa-solid fa-message",
-    href: "/conversation",
+    href: "/Information",
     color: "text-violet-500",
   },
   {
@@ -71,17 +71,17 @@ export const sidebarData = [
     label: "Code",
     icon: "fa-solid fa-code",
     href: "/code",
-    color: "text-green-700",
+    color: "text-sky-500",
   },
 ];
 
 export const landingToolsData = [
   {
-    label: "Conversation",
+    label: "Information",
     icon: "fa-solid fa-message",
     color: "text-violet-500",
     bgColor: "bg-violet-500/10",
-    href: "/conversation",
+    href: "/information",
   },
   {
     label: "Image Generator",

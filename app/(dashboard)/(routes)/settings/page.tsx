@@ -5,7 +5,7 @@ const SettingsPage = () => {
     <div>
       <Heading
         title="Settings"
-        description="Most advanced conversation tool"
+        description="Most advanced AI tools"
         icon="fa-solid fa-gear"
         iconColor="text-violet-500"
         bgColor="bg-violet-500/10"

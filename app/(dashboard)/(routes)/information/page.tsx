@@ -23,10 +23,10 @@ import {
   FormField,
   FormItem,
 } from "@/components/Shadcn/form";
-import ContentLoader from "@/components/Loader/Loader";
+import ContentLoader from "@/components/ContentLoader/ContentLoader";
 import Empty from "@/components/Empty/Empty";
 
-const ConversationPage = () => {
+const InformationPage = () => {
   const router = useRouter();
 
   const [messages, setMessages] = useState<ChatCompletionRequestMessage[]>([]);
@@ -49,7 +49,7 @@ const ConversationPage = () => {
 
       const newMessages = [...messages, userMessage];
 
-      const response = await axios.post("/api/conversation", {
+      const response = await axios.post("/api/Information", {
         messages: newMessages,
       });
 
@@ -107,7 +107,7 @@ const ConversationPage = () => {
           </Form>
         </div>
         <div className="space-y-4 mt-8">
-          {isLoading && <ContentLoader title={"Conversation loading !"} />}
+          {isLoading && <ContentLoader title={"Information loading !"} />}
 
           {messages.length === 0 && !isLoading && (
             <Empty icon="/info.jpg" title="No Information generated yet!" />
@@ -135,4 +135,4 @@ const ConversationPage = () => {
   );
 };
 
-export default ConversationPage;
+export default InformationPage;

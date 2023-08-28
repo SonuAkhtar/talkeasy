@@ -23,7 +23,7 @@ import { Button } from "@/components/Shadcn/button";
 // internal components
 import { formSchema } from "./constants";
 import Heading from "@/components/Heading/Heading";
-import ContentLoader from "@/components/Loader/Loader";
+import ContentLoader from "@/components/ContentLoader/ContentLoader";
 import Empty from "@/components/Empty/Empty";
 
 const CodePage = () => {
@@ -70,8 +70,8 @@ const CodePage = () => {
         title="Code"
         description="Generate code using generative text"
         icon="fa-solid fa-code"
-        iconColor="text-green-700"
-        bgColor="bg-green-700/10"
+        iconColor="text-sky-500"
+        bgColor="bg-sky-500/10"
       />
 
       <div className="px-4 lg:px-8">

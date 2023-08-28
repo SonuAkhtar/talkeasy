@@ -11,7 +11,7 @@ import {
 import { landingTestimonyData } from "@/app/api/data";
 import "./landingTestimony.css";
 
-export const LandingTestimony = () => {
+const LandingTestimony = () => {
   return (
     <div className="w-full px-10 pt-5 pb-10 md:pb-20 flex items-center justify-center shadow-md">
       <div className="w-full max-w-7xl">
@@ -47,3 +47,5 @@ export const LandingTestimony = () => {
     </div>
   );
 };
+
+export default LandingTestimony;

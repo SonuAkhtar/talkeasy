@@ -5,7 +5,7 @@ import { Button } from "@/components/Shadcn/button";
 import { landingAboutData } from "@/app/api/data";
 import "./landingAbout.css";
 
-export const LandingAbout = () => {
+const LandingAbout = () => {
   return (
     <div className="w-full px-10 pt-5 pb-10 md:pb-20 flex items-center justify-center bg-[#bbadff] text-[#1e2521]">
       <div className="w-full max-w-7xl">
@@ -51,3 +51,5 @@ export const LandingAbout = () => {
     </div>
   );
 };
+
+export default LandingAbout;
