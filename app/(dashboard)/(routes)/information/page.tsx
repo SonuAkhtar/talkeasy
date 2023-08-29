@@ -25,6 +25,7 @@ import {
 } from "@/components/Shadcn/form";
 import ContentLoader from "@/components/ContentLoader/ContentLoader";
 import Empty from "@/components/Empty/Empty";
+import PageLoader from "@/components/PageLoader/PageLoader";
 
 const InformationPage = () => {
   const router = useRouter();
@@ -49,7 +50,7 @@ const InformationPage = () => {
 
       const newMessages = [...messages, userMessage];
 
-      const response = await axios.post("/api/Information", {
+      const response = await axios.post("/api/information", {
         messages: newMessages,
       });
 
@@ -65,7 +66,9 @@ const InformationPage = () => {
   };
 
   return (
-    <div>
+    <>
+      <PageLoader />
+
       <Heading
         title="Information"
         description="Power of Advanced AI in your hands."
@@ -131,7 +134,7 @@ const InformationPage = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

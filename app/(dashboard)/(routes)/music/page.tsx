@@ -23,6 +23,7 @@ import { formSchema } from "./constants";
 import Heading from "@/components/Heading/Heading";
 import ContentLoader from "@/components/ContentLoader/ContentLoader";
 import Empty from "@/components/Empty/Empty";
+import PageLoader from "@/components/PageLoader/PageLoader";
 
 const MusicPage = () => {
   const router = useRouter();
@@ -56,7 +57,9 @@ const MusicPage = () => {
   };
 
   return (
-    <div>
+    <>
+      <PageLoader />
+
       <Heading
         title="Music"
         description="Let's convert your tune to music with AI"
@@ -110,7 +113,7 @@ const MusicPage = () => {
           )}
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

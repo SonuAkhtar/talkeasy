@@ -46,7 +46,7 @@ export const sidebarData = [
   {
     label: "Information",
     icon: "fa-solid fa-message",
-    href: "/Information",
+    href: "/information",
     color: "text-violet-500",
   },
   {

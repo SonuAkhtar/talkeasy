@@ -18,7 +18,9 @@ const LandingTools = () => {
                 (index === 1 || index === 3 || index === 4) && "md:col-span-2"
               }`}
             >
-              <Card className={`border-none shadow-xl ${tool.bgColor}`}>
+              <Card
+                className={`border-none shadow-md hover:shadow-xl transition-all duration-500 ${tool.bgColor}`}
+              >
                 <CardHeader>
                   <CardTitle className="flex items-center gap-x-2">
                     <div className="w-full flex flex-col items-center justify-center gap-2">

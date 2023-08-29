@@ -8,13 +8,15 @@ import { Card } from "@/components/Shadcn/card";
 
 // internal components
 import { dashboardData } from "@/app/api/data";
+import PageLoader from "@/components/PageLoader/PageLoader";
 import "./page.css";
 
 const DashboardPage = () => {
   const router = useRouter();
 
   return (
-    <div>
+    <>
+      <PageLoader />
       <div className="mb-8 space-y-4">
         <h2 className="text-2xl md:text-4xl font-bold text-center">
           Explore the Power of AI
@@ -41,7 +43,7 @@ const DashboardPage = () => {
           </Card>
         ))}
       </div>
-    </div>
+    </>
   );
 };
 

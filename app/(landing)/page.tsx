@@ -9,13 +9,13 @@ import PageLoader from "@/components/PageLoader/PageLoader";
 const LandingPage = () => {
   return (
     <div className="h-full">
+      <PageLoader />
       <LandingNavbar />
       <LandingHero />
       <LandingTools />
       <LandingTestimony />
       <LandingAbout />
       <LandingFooter />
-      <PageLoader />
     </div>
   );
 };

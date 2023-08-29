@@ -23,6 +23,7 @@ import { formSchema } from "./constants";
 import Heading from "@/components/Heading/Heading";
 import ContentLoader from "@/components/ContentLoader/ContentLoader";
 import Empty from "@/components/Empty/Empty";
+import PageLoader from "@/components/PageLoader/PageLoader";
 
 const VideoPage = () => {
   const router = useRouter();
@@ -56,7 +57,9 @@ const VideoPage = () => {
   };
 
   return (
-    <div>
+    <>
+      <PageLoader />
+
       <Heading
         title="Video"
         description="Provide any prompt and see magic!"
@@ -113,7 +116,7 @@ const VideoPage = () => {
           )}
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

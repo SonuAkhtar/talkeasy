@@ -25,6 +25,7 @@ import { formSchema } from "./constants";
 import Heading from "@/components/Heading/Heading";
 import ContentLoader from "@/components/ContentLoader/ContentLoader";
 import Empty from "@/components/Empty/Empty";
+import PageLoader from "@/components/PageLoader/PageLoader";
 
 const CodePage = () => {
   const router = useRouter();
@@ -65,7 +66,9 @@ const CodePage = () => {
   };
 
   return (
-    <div>
+    <>
+      <PageLoader />
+
       <Heading
         title="Code"
         description="Generate code using generative text"
@@ -87,7 +90,7 @@ const CodePage = () => {
                   <FormItem className="col-span-12 lg:col-span-10">
                     <FormControl className="m-0 p-0">
                       <Input
-                        className="bg-transparent border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
+                        className="bg-transparent border-0 outline-transparent focus-visible:ring-0 focus-visible:ring-transparent"
                         disabled={isLoading}
                         placeholder="Simple button with reactjs"
                         {...field}
@@ -143,7 +146,7 @@ const CodePage = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

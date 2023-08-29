@@ -33,6 +33,7 @@ import { amountOptions, formSchema, resolutionOptions } from "./constants";
 import Heading from "@/components/Heading/Heading";
 import Empty from "@/components/Empty/Empty";
 import ContentLoader from "@/components/ContentLoader/ContentLoader";
+import PageLoader from "@/components/PageLoader/PageLoader";
 
 const ImagePage = () => {
   const router = useRouter();
@@ -67,7 +68,9 @@ const ImagePage = () => {
   };
 
   return (
-    <div>
+    <>
+      <PageLoader />
+
       <Heading
         title="Image"
         description="Turn your imagination into images"
@@ -195,7 +198,7 @@ const ImagePage = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
