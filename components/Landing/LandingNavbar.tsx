@@ -24,14 +24,16 @@ const LandingNavbar = () => {
           </h1>
         </Link>
         <div className="flex items-center gap-x-2 md:gap-x-4">
-          <Link href="/login">
-            <Button
-              variant="outline"
-              className="rounded-full bg-transparent text-white"
-            >
-              Login
-            </Button>
-          </Link>
+          {!isSignedIn && (
+            <Link href="/login">
+              <Button
+                variant="outline"
+                className="rounded-full bg-transparent text-white"
+              >
+                Login
+              </Button>
+            </Link>
+          )}
           <Link href={isSignedIn ? "/dashboard" : "/login"}>
             <Button variant="outline" className="rounded-full">
               Get Started
