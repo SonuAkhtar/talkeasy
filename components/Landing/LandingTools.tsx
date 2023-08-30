@@ -19,7 +19,7 @@ const LandingTools = () => {
               }`}
             >
               <Card
-                className={`border-none shadow-md hover:shadow-xl transition-all duration-500 ${tool.bgColor}`}
+                className={`border-black/5 hover:shadow-lg transition-all duration-500 ${tool.bgColor}`}
               >
                 <CardHeader>
                   <CardTitle className="flex items-center gap-x-2">
