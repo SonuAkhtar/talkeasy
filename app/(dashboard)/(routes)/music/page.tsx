@@ -68,7 +68,7 @@ const MusicPage = () => {
         bgColor="bg-emerald-700/10"
       />
 
-      <div className="px-4 lg:px-8">
+      <div className="px-4 pb-8 lg:px-8">
         <div>
           <Form {...form}>
             <form

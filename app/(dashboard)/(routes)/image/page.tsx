@@ -79,7 +79,7 @@ const ImagePage = () => {
         bgColor="bg-pink-500/10"
       />
 
-      <div className="px-4 lg:px-8">
+      <div className="px-4 pb-8 lg:px-8">
         <div>
           <Form {...form}>
             <form
